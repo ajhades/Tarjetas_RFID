@@ -54,26 +54,27 @@ int cardsReads[3] = {0,0,0};
 int stepcards; // Contador de secuencia
 // const char *to_find = "96 A2 8E 8D 00 00 00 00 00 00 08 0A";
   const char *subject[] = { // strings to search through
-    "86 16 8C 8D 00 00 00 00 00 00 08 0A", // Hen 1 - llavero
-    "96 A2 8E 8D 00 00 00 00 00 00 08 0A", // Cow 2 - llavero
-    "50 60 EB 87 00 00 00 00 00 00 08 0A", // Pig 3 - llavero
-  };
-    const char *verb[] = { // strings to search through
-      "D4 0F E5 D5 00 00 00 00 00 00 08 0A", // Eat 1
-      "DC AA 8C 65 00 00 00 00 00 00 08 0A", // Play 2
-      "4E 29 5D 51 00 00 00 00 00 00 08 0A", // Sleep (7)
-    };
-    const char *complement[] = { // strings to search through
-      "8E D4 59 51 00 00 00 00 00 00 08 0A", // Corn 4
-      "4E 29 5D 51 00 00 00 00 00 00 08 0A", // Sand 5
-      "DE FD 7F 51 00 00 00 00 00 00 08 0A", // Gallinero 6
-      "B0 00 DC 87 00 00 00 00 00 00 08 0A", // Pasto 4 - llavero
-      "1E D5 59 51 00 00 00 00 00 00 08 0A", // Ball 3
-      "B0 00 DC 87 00 00 00 00 00 00 08 0A", // Establo (4)
-      //"1E D5 59 51 00 00 00 00 00 00 08 0A", // Food
-      //"1E D5 59 51 00 00 00 00 00 00 08 0A", // Lodo
-      //"1E D5 59 51 00 00 00 00 00 00 08 0A", // Garaje
-    };
+  "86 16 8C 8D 00 00 00 00 00 00 08 0A", // Hen 1 - llavero
+  "96 A2 8E 8D 00 00 00 00 00 00 08 0A", // Cow 2 - llavero
+  "50 60 EB 87 00 00 00 00 00 00 08 0A", // Pig 3 - llavero
+};
+const char *verb[] = { // strings to search through
+  "D4 0F E5 D5 00 00 00 00 00 00 08 0A", // Eat 1
+  "DC AA 8C 65 00 00 00 00 00 00 08 0A", // Play 2
+  //"4E 29 5D 51 00 00 00 00 00 00 08 0A", // Sleep (7)
+  "de 29 5d 51 00 00 00 00 00 00 08 0a", // Sleep (7)
+};
+const char *complement[] = { // strings to search through
+  "8E D4 59 51 00 00 00 00 00 00 08 0A", // Corn 4
+  "4E 29 5D 51 00 00 00 00 00 00 08 0A", // Sand 5
+  "DE FD 7F 51 00 00 00 00 00 00 08 0A", // Gallinero 6
+  "B0 00 DC 87 00 00 00 00 00 00 08 0A", // Pasto 4 - llavero
+  "1E D5 59 51 00 00 00 00 00 00 08 0A", // Ball 3
+  "90 2A DE 87 00 00 00 00 00 00 08 0A", // Establo 8- llavero
+  "B0 16 EA 87 00 00 00 00 00 00 08 0A", // Food 5- llavero
+  "60 44 E0 87 00 00 00 00 00 00 08 0A", // Lodo 6 - llavero
+  "50 EB E0 87 00 00 00 00 00 00 08 0A", // Garaje 7 - llavero
+};
     int len_sub = (sizeof (subject) / sizeof (*subject)); // Cantidad de sujetos
     int len_verb = (sizeof (verb) / sizeof (*verb)); // Cantidad de verbos
     int len_comp = (sizeof (complement) / sizeof (*complement)); // Cantidad de complementos
